@@ -10,7 +10,8 @@ import {
   Zap,
   Users,
 } from "lucide-react";
-
+import captureApp from "./assets/app.png"
+import { Link } from "react-router-dom";
 export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -26,8 +27,8 @@ export default function Portfolio() {
       description:
       "Aplicación móvil publicada en Google Play con más de 100.000 descargas, enfocada en el pago de boletos de transporte urbano y utilizada activamente en la ciudad.",
       tags: ["React Native", "Expo", "Redux","Push Notifications"],
-      image: "bg-gradient-to-br from-purple-500 to-pink-500",
-      link: "https://play.google.com/...",
+      image: captureApp,
+      link: "https://play.google.com/store/apps/details?id=com.serviciosurbanos.misionero&hl=es_AR",
     },
     {
       title: "App de transporte urbano",
@@ -38,22 +39,7 @@ export default function Portfolio() {
       image: "bg-gradient-to-br from-purple-500 to-blue-500",
       link: "#",
     },
-    {
-      title: "Weather Dashboard",
-      description:
-        "Dashboard de clima interactivo con predicciones y datos en tiempo real.",
-      tags: ["JavaScript", "API REST", "Chart.js"],
-      image: "bg-gradient-to-br from-green-500 to-emerald-500",
-      link: "#",
-    },
-    {
-      title: "Social Media Analytics",
-      description:
-        "Herramienta para analizar y visualizar métricas de redes sociales.",
-      tags: ["React", "D3.js", "Python", "PostgreSQL"],
-      image: "bg-gradient-to-br from-orange-500 to-red-500",
-      link: "#",
-    },
+    
   ];
 
   const skills = [
@@ -143,7 +129,7 @@ export default function Portfolio() {
             <h1 className="text-5xl sm:text-7xl font-bold mb-6 leading-tight text-gray-600">
               Hola, soy{" "}
               <span className="bg-gradient-to-r from-amber-700/40 to-amber-950/80 bg-clip-text text-transparent">
-                Carla Rodríguez
+                Carla Rodriguez
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
@@ -154,13 +140,13 @@ export default function Portfolio() {
             <div className="flex gap-4 justify-center">
               <button
                 onClick={() => scrollToSection("proyectos")}
-                className="px-8 py-3 bg-gradient-to-r from-amber-700/40 to-amber-950/80 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition"
+                className="px-8 py-3 bg-gradient-to-r from-amber-700/40 to-amber-950/80 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-amber-900/50 transition"
               >
                 Ver Proyectos
               </button>
               <button
                 onClick={() => scrollToSection("contacto")}
-                className="px-8 py-3 border border-amber-600 text-amber-950 font-semibold rounded-lg hover:border-cyan-400 transition"
+                className="px-8 py-3 border border-amber-600 text-amber-950 font-semibold rounded-lg hover:border-amber-900 transition"
               >
                 Contactame
               </button>
@@ -187,8 +173,10 @@ export default function Portfolio() {
             {projects.map((project, idx) => (
               <div key={idx} className="group cursor-pointer">
                 <div
-                  className={`${project.image} h-64 rounded-xl mb-4 transition transform group-hover:scale-105`}
-                ></div>
+                  className={`border-gray-50/40 border-2 h-64 rounded-md mb-4 transition transform group-hover:scale-105`}
+                >
+                 <img src={project.image} alt={project.title} className="w-full h-full object-cover rounded-md"/>
+                </div>
                 <h3 className="text-xl font-semibold mb-2 text-white">
                   {project.title}
                 </h3>
@@ -205,6 +193,7 @@ export default function Portfolio() {
                 </div>
                 <a
                   href={project.link}
+                  target="_blank"
                   className="inline-flex items-center gap-2 text-white hover:text-gray-300 transition"
                 >
                   Ver Proyecto <ExternalLink size={16} />
@@ -214,11 +203,12 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+      {/* casos de estudio  */}
       <section id="casos" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100">
         <h2 className="text-4xl font-bold mb-6 text-center text-gray-700">
           Casos de Estudio
         </h2>
-        <div className="max-w-4xl mx-auto border-2 border-amber-950/20 rounded-lg p-8">
+        <div className="max-w-4xl bg-white mx-auto border-2 border-amber-950/20 rounded-lg p-8">
             <h3 className="text-xl font-semibold text-amber-950 mb-3">
               Dashboard de Administración Interna
             </h3>
@@ -289,7 +279,7 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contacto" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-200">
+      <section id="contacto" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6 text-gray-600">
             ¿Listo para Colaborar?
