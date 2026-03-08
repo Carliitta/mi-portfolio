@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import img1 from '../assets/cap-parana1.png'
-import img2 from '../assets/cap-parana2.png'
-import img3 from '../assets/cap-parana3.png'
+import img1 from '../assets/cap1.png'
+import img2 from '../assets/cap2.png'
+import img3 from '../assets/cap3.png'
 
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code2, Zap, Users, ChevronLeft, ChevronRight, ArrowLeft } from "lucide-react";
 function ProjectDetail() {

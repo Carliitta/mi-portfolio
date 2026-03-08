@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code2, Zap, Users, ChevronLeft, ChevronRight, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import imgBilletera from '../assets/app.png'
-import imgBondy from '../assets/cap-parana1.png'
+import imgBondy from '../assets/bondy.png'
 import yo from '../assets/mi.jpg'
 
 function Portfolio() {
@@ -26,12 +26,13 @@ function Portfolio() {
         },
         {
             id: "transporte-urbano",
-            title: "App de transporte urbano",
+            title: "App de transporte urbano- BondiYA!",
             description:
-                "Desarrollo de aplicación móvil con mapas interactivos para mostrar paradas de colectivos, recorridos y tiempos de arribo aproximados utilizando datos de ubicación.",
+                "Desarrollo de aplicación móvil con mapas interactivos para mostrar paradas de colectivos y tiempos de arribo aproximados utilizando datos de ubicación.",
             tags: ["React Native", "Expo", "MapLibre", "Zustand"],
             image: imgBondy,
             hasDetail: true,
+            link:"https://play.google.com/store/apps/details?id=com.serviciosurbanos.bondiya&hl=en-US"
         },
     ];
 
@@ -300,13 +301,13 @@ function Portfolio() {
 
                     <div className="flex gap-6 justify-center mb-12 flex-wrap">
                         <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=carla.rodriguez340@gmail.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex items-center gap-2 px-6 py-3 bg-amber-950/50 text-white font-semibold rounded-lg hover:bg-amber-950/30 transition"
->
-  <Mail size={20} /> Enviar correo
-</a>
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=carla.rodriguez340@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-6 py-3 bg-amber-950/50 text-white font-semibold rounded-lg hover:bg-amber-950/30 transition"
+                        >
+                            <Mail size={20} /> Enviar correo
+                        </a>
 
                         <a
                             target="_blank"
