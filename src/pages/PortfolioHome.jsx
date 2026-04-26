@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code2, Zap, Users, ChevronLeft, ChevronRight, ArrowLeft } from "lucide-react";
+import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code2, Zap, Users, ChevronLeft, ChevronRight, ArrowLeft ,Images} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import imgBilletera from '../assets/app.png'
 import imgBondy from '../assets/bondy.png'
@@ -22,7 +22,8 @@ function Portfolio() {
                 "Aplicación móvil publicada en Google Play con más de 100.000 descargas, enfocada en el pago de boletos de transporte urbano y utilizada activamente en la ciudad.",
             tags: ["React Native", "Expo", "Redux", "Push Notifications"],
             image: imgBilletera,
-            link: "https://play.google.com/store/apps/details?id=com.serviciosurbanos.misionero&hl=es_AR",
+             hasDetail: true,
+         
         },
         {
             id: "transporte-urbano",
@@ -32,7 +33,7 @@ function Portfolio() {
             tags: ["React Native", "Expo", "MapLibre", "Zustand"],
             image: imgBondy,
             hasDetail: true,
-            link:"https://play.google.com/store/apps/details?id=com.serviciosurbanos.bondiya&hl=en-US"
+         
         },
     ];
 
@@ -133,8 +134,7 @@ function Portfolio() {
                             </span>
                         </h1>
                         <p className="text-lg sm:text-xl text-slate-700 mb-8 max-w-2xl mx-auto">
-                            Desarrolladora Frontend especializada en React, React Native y
-                            Expo.
+                            Desarrolladora Frontend especializada en React, React Native.
                         </p>
 
                         <div className="flex gap-4 justify-center">
@@ -165,7 +165,7 @@ function Portfolio() {
                         Proyectos Destacados
                     </h2>
                     <p className="text-gray-100 text-center mb-12 max-w-2xl mx-auto">
-                        Aquí están algunos de mis mejores trabajos.
+                        Aquí están algunos de mis trabajos en producción.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-8">
@@ -182,7 +182,7 @@ function Portfolio() {
                                     {project.title}
                                 </h3>
                                 <p className="text-gray-100 mb-4">{project.description}</p>
-                                <div className="flex flex-wrap gap-2 mb-4">
+                                <div className="flex flex-wrap gap-2 mb-4 ">
                                     {project.tags.map((tag, i) => (
                                         <span
                                             key={i}
@@ -192,23 +192,16 @@ function Portfolio() {
                                         </span>
                                     ))}
                                 </div>
-                                {project.hasDetail ? (
+                               
                                     <button
                                         onClick={() => navigate(`/proyect/${project.id}`)}
-                                        className="cursor-pointer inline-flex items-center gap-2 text-white hover:text-gray-300 transition"
+                                        className="mr-10 cursor-pointer inline-flex items-center gap-2 text-white hover:text-gray-300 transition"
                                     >
-                                        Ver Detalles <ExternalLink size={16} />
+                                        Detalles <Images size={16} />
                                     </button>
-                                ) : (
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="cursor-pointer inline-flex items-center gap-2 text-white hover:text-gray-300 transition"
-                                    >
-                                        Ver Proyecto <ExternalLink size={16} />
-                                    </a>
-                                )}
+                                   
+                                   
+                            
                             </div>
                         ))}
                     </div>
